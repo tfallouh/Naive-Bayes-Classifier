@@ -38,3 +38,32 @@ Les performances du modèle sont évaluées en comparant les prédictions avec l
 
 Scikit-Learn offre une implémentation simple et efficace du classificateur Naïve Bayes. En utilisant la classe `GaussianNB`, nous pouvons entraîner notre modèle avec quelques lignes de code.
 
+## Use Case : Classification pour le Risk Loan Management
+Bien que ce projet utilise le dataset Iris, les mêmes techniques peuvent être appliquées à des cas concrets tels que le Risk Loan Management, un domaine où les institutions financières évaluent la probabilité qu'un client rembourse un prêt.
+
+### Contexte
+Dans le domaine du Risk Loan Management, les banques doivent classifier les emprunteurs potentiels en faible risque ou risque élevé. Le modèle Naïve Bayes est particulièrement adapté ici, car il peut exploiter les caractéristiques des emprunteurs (comme l'âge, le revenu, l'historique de crédit, etc.) pour estimer la probabilité qu'un emprunteur appartienne à une de ces deux classes.
+
+### Application du Modèle Naïve Bayes
+Données : Les caractéristiques utilisées pourraient inclure l'âge du client, son revenu mensuel, le montant du prêt, et la durée d'emploi. Ces données sont traitées comme des indices conditionnels influençant la probabilité d'appartenir à une classe.
+
+- Probabilités a priori : Elles sont calculées en fonction de la proportion d'emprunteurs dans chaque classe (faible ou élevé) dans les données historiques. Par exemple, si 70 % des clients ont remboursé leurs prêts, la probabilité a priori d'un faible risque serait de 0.7.
+
+- Probabilités conditionnelles : Ces probabilités sont calculées en fonction des caractéristiques spécifiques d'un client. Par exemple, un client avec un revenu élevé a plus de chances d'être classé comme "faible risque".
+
+- Prédiction : En combinant les probabilités a priori et conditionnelles, le modèle détermine si le client est "faible risque" ou "risque élevé". Cela aide les institutions financières à décider d'approuver ou de refuser une demande de prêt.
+
+### Avantages et Limites
+
+Avantages :
+
+- Simple à mettre en œuvre et rapide, même avec des grandes quantités de données.
+- Efficace lorsque les attributs sont indépendants.
+
+Limites :
+
+- L'hypothèse d'indépendance des attributs, bien que pratique, n'est pas toujours réaliste dans des cas comme celui du prêt. Par exemple, le revenu et la durée d'emploi peuvent être corrélés.
+- Le modèle Naïve Bayes peut mal gérer les données corrélées ou les relations non linéaires, limitant sa performance dans certains cas complexes de gestion de risques financiers.
+
+
+Ce projet montre que, bien que le classificateur Naïve Bayes soit efficace et simple d'utilisation, des ajustements pourraient être nécessaires dans des applications plus complexes, comme le Risk Loan Management.
